@@ -2,153 +2,553 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#10131a">
-  <meta name="description" content="NEXQ Executive Performance Intelligence. Business performance, operational intelligence and executive partnership.">
-  <title>NEXQ | Executive Performance Intelligence</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: #10131a;
-      color: #f5f6f8;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-    }
-    header {
-      padding: 28px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #292d36;
-    }
-    .logo {
-      font-size: 32px;
-      font-weight: 800;
-      letter-spacing: 5px;
-    }
-    .logo span { color: #8ca8ff; }
-    nav a {
-      color: #d5d9e2;
-      text-decoration: none;
-      margin-left: 28px;
-      font-size: 13px;
-    }
-    .hero {
-      min-height: 75vh;
-      padding: 110px 8%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      max-width: 1100px;
-    }
-    .eyebrow {
-      color: #8ca8ff;
-      letter-spacing: 4px;
-      font-size: 12px;
-      font-weight: bold;
-      margin-bottom: 25px;
-    }
-    h1 {
-      font-size: clamp(48px, 8vw, 88px);
-      line-height: 1.05;
-      letter-spacing: -3px;
-      margin-bottom: 28px;
-    }
-    h1 span { color: #8ca8ff; }
-    .intro {
-      max-width: 650px;
-      color: #aeb5c2;
-      font-size: 19px;
-      margin-bottom: 35px;
-    }
-    .cta {
-      display: inline-block;
-      width: fit-content;
-      padding: 15px 28px;
-      background: #8ca8ff;
-      color: #10131a;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 4px;
-    }
-    .services {
-      padding: 75px 8%;
-      background: #171b24;
-    }
-    .services h2 { font-size: 32px; margin-bottom: 35px; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      border: 1px solid #303744;
-      padding: 28px;
-      border-radius: 8px;
-    }
-    .card h3 { color: #8ca8ff; margin-bottom: 12px; }
-    .card p { color: #aeb5c2; font-size: 14px; }
-    footer {
-      padding: 30px 8%;
-      color: #858d9b;
-      font-size: 12px;
-      border-top: 1px solid #292d36;
-    }
-    @media(max-width:600px) {
-      nav { display: none; }
-      .hero { padding-top: 75px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080e1c">
+
+<title>NEXQ | Executive Performance Intelligence</title>
+
+<meta name="description" content="NEXQ connects executive intelligence, operational performance and business execution. Meet THE BOSS.">
+
+<style>
+:root {
+  --bg: #080e1c;
+  --panel: #101a2d;
+  --blue: #238bff;
+  --light: #eaf2ff;
+  --muted: #9baac1;
+  --border: rgba(255,255,255,.10);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--light);
+  font-family: Inter, Arial, sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1120px, 90%);
+  margin: auto;
+}
+
+nav {
+  height: 82px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 5px;
+}
+
+.logo span { color: var(--blue); }
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.nav-links a:hover { color: white; }
+
+.hero {
+  min-height: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 0;
+  background:
+    radial-gradient(ellipse at 80% 40%,
+    rgba(35,139,255,.16), transparent 50%);
+}
+
+.eyebrow {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-size: clamp(45px, 7vw, 82px);
+  line-height: 1.08;
+  max-width: 900px;
+  letter-spacing: -3px;
+}
+
+h1 span { color: var(--blue); }
+
+.hero p {
+  color: var(--muted);
+  max-width: 650px;
+  font-size: 19px;
+  margin: 30px 0;
+}
+
+.actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 25px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 13px;
+  transition: .25s;
+}
+
+.primary {
+  background: var(--blue);
+  color: white;
+}
+
+.primary:hover {
+  background: #0871e6;
+  transform: translateY(-2px);
+}
+
+.secondary {
+  border: 1px solid var(--border);
+}
+
+.secondary:hover {
+  border-color: var(--blue);
+}
+
+section { padding: 100px 0; }
+
+.section-heading {
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.section-intro {
+  color: var(--muted);
+  max-width: 680px;
+  margin-bottom: 45px;
+}
+
+.boss {
+  background: linear-gradient(120deg, #101d35, #0b1425);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.boss-layout {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.boss-name {
+  font-size: clamp(48px, 7vw, 76px);
+  font-weight: 800;
+  letter-spacing: -3px;
+}
+
+.boss-name span { color: var(--blue); }
+
+.boss-description {
+  color: var(--muted);
+  margin: 25px 0;
+}
+
+.boss-panel {
+  padding: 35px;
+  border: 1px solid rgba(35,139,255,.35);
+  background: rgba(35,139,255,.06);
+  border-radius: 8px;
+}
+
+.boss-panel h3 {
+  color: var(--blue);
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+.boss-panel ul {
+  list-style: none;
+}
+
+.boss-panel li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--light);
+}
+
+.boss-panel li::before {
+  content: "→";
+  color: var(--blue);
+  margin-right: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  padding: 32px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: .25s;
+}
+
+.card:hover {
+  border-color: var(--blue);
+  transform: translateY(-5px);
+}
+
+.card-label {
+  color: var(--blue);
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+.card h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.card p { color: var(--muted); }
+
+.principles {
+  background: #0c1527;
+}
+
+.principle-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.principle h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.principle p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.contact {
+  text-align: center;
+  background:
+    radial-gradient(ellipse at center,
+    rgba(35,139,255,.13), transparent 65%);
+}
+
+.contact .section-heading {
+  max-width: 750px;
+  margin: 0 auto 25px;
+}
+
+.contact p {
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+
+footer {
+  padding: 30px 0;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+@media(max-width: 800px) {
+  .nav-links { gap: 12px; font-size: 11px; }
+  .boss-layout { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: 1fr; }
+  .principle-grid { grid-template-columns: 1fr 1fr; }
+  section { padding: 70px 0; }
+}
+
+@media(max-width: 480px) {
+  nav { height: auto; padding: 20px 0; align-items: flex-start; }
+  .nav-links { flex-direction: column; }
+  .principle-grid { grid-template-columns: 1fr; }
+  h1 { letter-spacing: -1px; }
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <div class="logo">NEX<span>Q</span></div>
-    <nav>
-      <a href="#intelligence">INTELLIGENCE</a>
-      <a href="#performance">PERFORMANCE</a>
-      <a href="#executive">EXECUTIVE</a>
-    </nav>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="eyebrow">EXECUTIVE PERFORMANCE INTELLIGENCE</div>
-      <h1>Business is complex.<br><span>Performance</span> shouldn't be.</h1>
-      <p class="intro">
-        Meet a new generation of executive business partnership.
-        Combining artificial intelligence, operational intelligence
-        and experienced human executive insight.
-      </p>
-      <a class="cta" href="#intelligence">Discover NEXQ</a>
-    </section>
+<header class="container">
+<nav>
+  <a href="#" class="logo">NEX<span>Q</span></a>
 
-    <section class="services" id="intelligence">
-      <h2>One partner. A bigger picture.</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>NEXQ AI</h3>
-          <p>Your intelligent executive partner. Ask questions, analyse challenges and turn insight into action.</p>
-        </article>
-        <article class="card" id="performance">
-          <h3>NEXQ Performance</h3>
-          <p>Understand production, attendance, productivity, efficiency and profitability.</p>
-        </article>
-        <article class="card">
-          <h3>NEXQ Intelligence</h3>
-          <p>Transform business information into meaningful insights and better decisions.</p>
-        </article>
-        <article class="card" id="executive">
-          <h3>NEXQ Executive</h3>
-          <p>Access experienced human executive support when your business needs an additional advantage.</p>
-        </article>
-      </div>
-    </section>
-  </main>
+  <div class="nav-links">
+    <a href="#vision">Our Vision</a>
+    <a href="#boss">THE BOSS</a>
+    <a href="#ecosystem">Ecosystem</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+</header>
 
-  <footer>
-    NEXQ | An executive performance intelligence initiative of KhulumaTech Holdings.
-    <br>© 2026 NEXQ. All rights reserved.
-  </footer>
+<main>
+
+<section class="hero" id="vision">
+<div class="container">
+
+<div class="eyebrow">Executive Performance Intelligence</div>
+
+<h1>
+Connect the dots.<br>
+See the whole business.<br>
+<span>Improve performance.</span>
+</h1>
+
+<p>
+NEXQ brings executive intelligence, operational insight
+and business execution together to help organisations
+perform at their full potential.
+</p>
+
+<div class="actions">
+<a href="#boss" class="btn primary">Discover THE BOSS</a>
+<a href="#ecosystem" class="btn secondary">Explore NEXQ</a>
+</div>
+
+</div>
+</section>
+
+<section class="boss" id="boss">
+<div class="container boss-layout">
+
+<div>
+<div class="eyebrow">The flagship executive experience</div>
+
+<div class="boss-name">THE <span>BOSS</span></div>
+
+<h2 class="section-heading">
+Your executive advantage.
+</h2>
+
+<p class="boss-description">
+An intelligent executive performance partner designed
+to give business leaders greater visibility, control
+and understanding of their organisations.
+
+THE BOSS connects the information that matters,
+identifies opportunities, highlights inefficiencies
+and supports better executive decisions.
+
+Not another dashboard. Not another disconnected system.
+A smarter way to lead.
+</p>
+
+<a href="#contact" class="btn primary">
+Discover THE BOSS
+</a>
+</div>
+
+<div class="boss-panel">
+<h3>EXECUTIVE PERFORMANCE</h3>
+<ul>
+<li>Business performance intelligence</li>
+<li>Production and operational efficiency</li>
+<li>Attendance and workforce insight</li>
+<li>Cost and resource optimisation</li>
+<li>Accountability and execution</li>
+<li>Executive decision support</li>
+<li>Human executive partnership</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<section id="ecosystem">
+<div class="container">
+
+<div class="eyebrow">The NEXQ ecosystem</div>
+
+<h2 class="section-heading">
+One connected vision.<br>
+Multiple performance opportunities.
+</h2>
+
+<p class="section-intro">
+NEXQ is designed as an evolving business intelligence
+ecosystem. Each component contributes to a more
+connected, accountable and productive organisation.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<div class="card-label">01 / EXECUTIVE</div>
+<h3>THE BOSS</h3>
+<p>
+The executive intelligence partner.
+Bringing leadership insight, business
+performance and execution together.
+</p>
+</div>
+
+<div class="card">
+<div class="card-label">02 / PERFORMANCE</div>
+<h3>TRACKA</h3>
+<p>
+A performance and accountability
+component supporting visibility,
+measurement and operational progress.
+</p>
+</div>
+
+<div class="card">
+<div class="card-label">03 / OUTPUT</div>
+<h3>OUTPUTA</h3>
+<p>
+A productivity-focused component
+supporting output measurement,
+efficiency and performance improvement.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="principles">
+<div class="container">
+
+<div class="eyebrow">Our philosophy</div>
+
+<h2 class="section-heading">
+Technology is the enabler.<br>
+Performance is the outcome.
+</h2>
+
+<p class="section-intro">
+We believe business improvement requires more than
+technology. It requires experience, accountability,
+understanding and practical execution.
+</p>
+
+<div class="principle-grid">
+
+<div class="principle">
+<h3>Intelligence</h3>
+<p>Turn business information into meaningful insight.</p>
+</div>
+
+<div class="principle">
+<h3>Visibility</h3>
+<p>Understand what is happening across the organisation.</p>
+</div>
+
+<div class="principle">
+<h3>Accountability</h3>
+<p>Connect decisions with ownership and action.</p>
+</div>
+
+<div class="principle">
+<h3>Results</h3>
+<p>Focus on measurable operational improvement.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<div class="eyebrow">The human advantage</div>
+
+<h2 class="section-heading">
+AI intelligence.<br>
+Real executive experience.
+</h2>
+
+<p class="section-intro">
+NEXQ combines intelligent technology with practical
+executive experience. Where required, THE BOSS can
+be complemented by direct human executive involvement,
+support and on-site engagement.
+
+Because understanding a business is about more than
+reading its numbers. It is about knowing what to do
+with them.
+</p>
+
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="container">
+
+<div class="eyebrow">The next level starts here</div>
+
+<h2 class="section-heading">
+Your business deserves an executive advantage.
+</h2>
+
+<p>
+Discover what NEXQ and THE BOSS can bring
+to your organisation.
+</p>
+
+<a href="mailto:" class="btn primary"
+onclick="event.preventDefault(); alert('Contact details will be added here for demonstration requests.');">
+Request a demonstration
+</a>
+
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="container footer-content">
+<div><strong>NEXQ</strong> | Executive Performance Intelligence</div>
+<div>© 2026 NEXQ. All rights reserved.</div>
+</div>
+</footer>
+
 </body>
 </html>
+
