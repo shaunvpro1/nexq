@@ -1,23 +1,27 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080e1c">
+<meta name="theme-color" content="#080b14">
 
-<title>NEXQ | Executive Performance Intelligence</title>
+<title>NXQ | You Stay in Control</title>
 
-<meta name="description" content="NEXQ connects executive intelligence, operational performance and business execution. Meet THE BOSS.">
+<meta name="description" content="NXQ helps business owners and executives gain greater control, clarity and confidence. Discover THE BOSS and the NXQ ecosystem.">
 
 <style>
 :root {
-  --bg: #080e1c;
-  --panel: #101a2d;
-  --blue: #238bff;
-  --light: #eaf2ff;
-  --muted: #9baac1;
-  --border: rgba(255,255,255,.10);
+  --bg: #080b14;
+  --surface: #101725;
+  --surface-light: #151f30;
+  --blue: #398fff;
+  --blue-light: #83b8ff;
+  --white: #f6f8fc;
+  --muted: #a4afc1;
+  --border: rgba(255,255,255,.11);
+  --max: 1180px;
 }
 
 * {
@@ -26,13 +30,18 @@
   box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
 
 body {
   background: var(--bg);
-  color: var(--light);
-  font-family: Inter, Arial, sans-serif;
+  color: var(--white);
+  font-family: Inter, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Arial, sans-serif;
   line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -41,85 +50,142 @@ a {
 }
 
 .container {
-  width: min(1120px, 90%);
+  width: min(var(--max), 90%);
   margin: auto;
 }
 
-nav {
-  height: 82px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.eyebrow {
+  color: var(--blue-light);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(8,11,20,.94);
+  backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--border);
 }
 
+nav {
+  min-height: 82px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
 .logo {
-  font-size: 30px;
-  font-weight: 800;
+  font-size: 29px;
+  font-weight: 850;
   letter-spacing: 5px;
 }
 
-.logo span { color: var(--blue); }
+.logo span {
+  color: var(--blue);
+}
 
 .nav-links {
   display: flex;
-  gap: 30px;
-  font-size: 13px;
+  align-items: center;
+  gap: 32px;
+  font-size: 12px;
+  font-weight: 600;
   color: var(--muted);
 }
 
-.nav-links a:hover { color: white; }
+.nav-links a {
+  transition: color .2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--white);
+}
+
+.nav-cta {
+  color: var(--white) !important;
+  border: 1px solid rgba(57,143,255,.55);
+  padding: 10px 17px;
+  border-radius: 3px;
+}
+
+.nav-cta:hover {
+  background: rgba(57,143,255,.12);
+}
+
+/* HERO */
 
 .hero {
-  min-height: 650px;
+  min-height: 690px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 100px 0;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
   background:
-    radial-gradient(ellipse at 80% 40%,
-    rgba(35,139,255,.16), transparent 50%);
+    radial-gradient(ellipse at 80% 35%,
+    rgba(35,110,220,.19), transparent 48%),
+    linear-gradient(180deg, #080b14, #0b1220);
 }
 
-.eyebrow {
-  color: var(--blue);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  margin-bottom: 25px;
+.hero-content {
+  padding: 115px 0 120px;
+  max-width: 1000px;
+  position: relative;
+  z-index: 1;
 }
 
-h1 {
-  font-size: clamp(45px, 7vw, 82px);
-  line-height: 1.08;
-  max-width: 900px;
-  letter-spacing: -3px;
+.hero h1 {
+  font-size: clamp(44px, 7vw, 86px);
+  line-height: 1.06;
+  letter-spacing: -4px;
+  font-weight: 750;
+  max-width: 1050px;
 }
 
-h1 span { color: var(--blue); }
+.hero h1 span {
+  display: block;
+  color: var(--blue-light);
+}
 
-.hero p {
+.hero-copy {
+  max-width: 670px;
   color: var(--muted);
-  max-width: 650px;
-  font-size: 19px;
-  margin: 30px 0;
+  font-size: 18px;
+  margin-top: 30px;
+}
+
+.hero-statement {
+  margin-top: 38px;
+  padding-left: 18px;
+  border-left: 2px solid var(--blue);
+  color: #dce8fa;
+  font-size: 14px;
+  max-width: 600px;
 }
 
 .actions {
   display: flex;
-  gap: 15px;
   flex-wrap: wrap;
-  margin-top: 15px;
+  gap: 14px;
+  margin-top: 38px;
 }
 
 .btn {
-  display: inline-block;
-  padding: 14px 25px;
-  border-radius: 4px;
-  font-weight: 700;
-  font-size: 13px;
-  transition: .25s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  min-height: 49px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: .5px;
+  transition: .25s ease;
 }
 
 .primary {
@@ -128,161 +194,321 @@ h1 span { color: var(--blue); }
 }
 
 .primary:hover {
-  background: #0871e6;
+  background: #1879ed;
   transform: translateY(-2px);
 }
 
 .secondary {
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255,255,255,.22);
+  color: var(--white);
 }
 
 .secondary:hover {
   border-color: var(--blue);
+  background: rgba(57,143,255,.08);
 }
 
-section { padding: 100px 0; }
+/* SHARED SECTIONS */
+
+section {
+  padding: 112px 0;
+}
 
 .section-heading {
-  font-size: clamp(32px, 5vw, 48px);
-  line-height: 1.2;
-  margin-bottom: 20px;
+  font-size: clamp(33px, 5vw, 53px);
+  line-height: 1.16;
+  letter-spacing: -1.8px;
+  font-weight: 700;
+  margin-bottom: 24px;
 }
 
 .section-intro {
+  max-width: 700px;
   color: var(--muted);
-  max-width: 680px;
-  margin-bottom: 45px;
+  font-size: 16px;
 }
 
-.boss {
-  background: linear-gradient(120deg, #101d35, #0b1425);
+.promise {
+  background: #101827;
+  text-align: center;
   border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.promise-inner {
+  max-width: 920px;
+  margin: auto;
+}
+
+.promise h2 {
+  font-size: clamp(35px, 6vw, 65px);
+  line-height: 1.13;
+  letter-spacing: -2px;
+}
+
+.promise h2 span {
+  display: block;
+  color: var(--blue-light);
+}
+
+.promise p {
+  max-width: 660px;
+  margin: 28px auto 0;
+  color: var(--muted);
+}
+
+/* THE BOSS */
+
+.boss {
+  background:
+    radial-gradient(ellipse at 78% 45%,
+    rgba(35,110,220,.13), transparent 42%),
+    #0a101c;
   border-bottom: 1px solid var(--border);
 }
 
 .boss-layout {
   display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 60px;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 75px;
   align-items: center;
 }
 
 .boss-name {
-  font-size: clamp(48px, 7vw, 76px);
+  font-size: clamp(48px, 6vw, 70px);
   font-weight: 800;
   letter-spacing: -3px;
+  line-height: 1;
+  margin-bottom: 26px;
 }
 
-.boss-name span { color: var(--blue); }
+.boss-name span {
+  color: var(--blue-light);
+}
 
 .boss-description {
   color: var(--muted);
-  margin: 25px 0;
+  max-width: 590px;
+  margin: 24px 0 30px;
+  font-size: 16px;
 }
 
-.boss-panel {
-  padding: 35px;
-  border: 1px solid rgba(35,139,255,.35);
-  background: rgba(35,139,255,.06);
-  border-radius: 8px;
+.boss-visual {
+  min-height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(57,143,255,.24);
+  border-radius: 5px;
+  background:
+    radial-gradient(circle at center,
+    rgba(57,143,255,.16), transparent 62%),
+    linear-gradient(145deg, #111c2d, #080e19);
 }
 
-.boss-panel h3 {
+.boss-visual::before {
+  content: "";
+  position: absolute;
+  width: 310px;
+  height: 310px;
+  border: 1px solid rgba(131,184,255,.15);
+  border-radius: 50%;
+}
+
+.boss-visual::after {
+  content: "";
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border: 1px solid rgba(131,184,255,.08);
+  border-radius: 50%;
+}
+
+.boss-mark {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(190px, 27vw, 310px);
+  line-height: 1;
+  font-weight: 850;
+  letter-spacing: -22px;
+  padding-right: 22px;
+  color: #f4f8ff;
+  text-shadow:
+    0 0 45px rgba(57,143,255,.25),
+    0 15px 45px rgba(0,0,0,.5);
+}
+
+.boss-mark span {
   color: var(--blue);
-  margin-bottom: 20px;
-  letter-spacing: 2px;
+}
+
+.boss-mark-caption {
+  position: absolute;
+  bottom: 28px;
+  z-index: 3;
+  font-size: 11px;
+  letter-spacing: 5px;
+  font-weight: 700;
+  color: var(--blue-light);
+}
+
+.boss-points {
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 19px 25px;
+}
+
+.boss-point {
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+  color: #dce5f3;
   font-size: 13px;
 }
 
-.boss-panel ul {
-  list-style: none;
-}
-
-.boss-panel li {
-  padding: 12px 0;
-  border-bottom: 1px solid var(--border);
-  color: var(--light);
-}
-
-.boss-panel li::before {
-  content: "→";
+.boss-point::before {
+  content: "—";
   color: var(--blue);
-  margin-right: 12px;
+  margin-right: 9px;
 }
 
-.grid {
+/* ECOSYSTEM */
+
+.ecosystem {
+  background: #0b111d;
+}
+
+.product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  margin-top: 52px;
 }
 
-.card {
-  padding: 32px;
-  background: var(--panel);
+.product-card {
+  padding: 38px;
+  min-height: 260px;
+  background: linear-gradient(145deg, #121e30, #0d1522);
   border: 1px solid var(--border);
-  border-radius: 6px;
-  transition: .25s;
+  transition: border-color .25s, transform .25s;
 }
 
-.card:hover {
-  border-color: var(--blue);
-  transform: translateY(-5px);
+.product-card:hover {
+  border-color: rgba(57,143,255,.55);
+  transform: translateY(-4px);
 }
 
-.card-label {
-  color: var(--blue);
-  font-size: 12px;
-  letter-spacing: 2px;
-  font-weight: bold;
-  margin-bottom: 18px;
+.product-number {
+  color: var(--blue-light);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
 }
 
-.card h3 {
-  font-size: 24px;
-  margin-bottom: 15px;
+.product-card h3 {
+  font-size: 27px;
+  letter-spacing: -.5px;
+  margin-bottom: 14px;
 }
 
-.card p { color: var(--muted); }
+.product-card p {
+  color: var(--muted);
+  font-size: 14px;
+  max-width: 440px;
+}
+
+/* PRINCIPLES */
 
 .principles {
-  background: #0c1527;
+  background: #101827;
 }
 
 .principle-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
+  margin-top: 52px;
+}
+
+.principle {
+  padding-top: 21px;
+  border-top: 1px solid rgba(131,184,255,.38);
 }
 
 .principle h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 17px;
+  margin-bottom: 12px;
 }
 
 .principle p {
   color: var(--muted);
-  font-size: 14px;
+  font-size: 13px;
 }
+
+/* HUMAN EXPERIENCE */
+
+.human {
+  background: #090f1a;
+}
+
+.human-layout {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.human-side {
+  color: var(--blue-light);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.human-copy {
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 700px;
+}
+
+.human-copy p + p {
+  margin-top: 20px;
+}
+
+/* CONTACT */
 
 .contact {
   text-align: center;
   background:
     radial-gradient(ellipse at center,
-    rgba(35,139,255,.13), transparent 65%);
+    rgba(35,110,220,.18), transparent 65%),
+    #0c1422;
+  border-top: 1px solid var(--border);
 }
 
 .contact .section-heading {
-  max-width: 750px;
-  margin: 0 auto 25px;
+  max-width: 850px;
+  margin: 0 auto 24px;
 }
 
 .contact p {
+  max-width: 620px;
   color: var(--muted);
-  margin-bottom: 30px;
+  margin: 0 auto;
 }
 
+.contact .actions {
+  justify-content: center;
+}
+
+/* FOOTER */
+
 footer {
-  padding: 30px 0;
+  padding: 32px 0;
   border-top: 1px solid var(--border);
   color: var(--muted);
   font-size: 12px;
@@ -291,264 +517,468 @@ footer {
 .footer-content {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-@media(max-width: 800px) {
-  .nav-links { gap: 12px; font-size: 11px; }
-  .boss-layout { grid-template-columns: 1fr; }
-  .grid { grid-template-columns: 1fr; }
-  .principle-grid { grid-template-columns: 1fr 1fr; }
-  section { padding: 70px 0; }
+.footer-brand {
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 3px;
 }
 
-@media(max-width: 480px) {
-  nav { height: auto; padding: 20px 0; align-items: flex-start; }
-  .nav-links { flex-direction: column; }
-  .principle-grid { grid-template-columns: 1fr; }
-  h1 { letter-spacing: -1px; }
+.footer-brand span {
+  color: var(--blue);
+}
+
+/* ACCESSIBILITY AND RESPONSIVE */
+
+a:focus-visible {
+  outline: 2px solid var(--blue-light);
+  outline-offset: 4px;
+}
+
+@media(max-width: 850px) {
+  .boss-layout,
+  .human-layout {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .boss-visual {
+    min-height: 360px;
+  }
+
+  .principle-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+}
+
+@media(max-width: 600px) {
+  nav {
+    padding: 17px 0;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 12px 19px;
+    font-size: 11px;
+  }
+
+  .nav-cta {
+    padding: 7px 10px;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-content {
+    padding: 90px 0;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .hero-copy {
+    font-size: 16px;
+  }
+
+  section {
+    padding: 78px 0;
+  }
+
+  .promise h2 {
+    letter-spacing: -1px;
+  }
+
+  .product-grid,
+  .principle-grid,
+  .boss-points {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card {
+    padding: 28px;
+    min-height: 220px;
+  }
+
+  .boss-visual {
+    min-height: 290px;
+  }
+
+  .boss-visual::before {
+    width: 220px;
+    height: 220px;
+  }
+
+  .boss-visual::after {
+    width: 280px;
+    height: 280px;
+  }
+
+  .boss-mark {
+    font-size: 205px;
+    letter-spacing: -15px;
+    padding-right: 15px;
+  }
+
+  .footer-content {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: .01ms !important;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header class="container">
-<nav>
-  <a href="#" class="logo">NEX<span>Q</span></a>
+<header>
+  <div class="container">
+    <nav aria-label="Main navigation">
+      <a href="#" class="logo" aria-label="NXQ home">NX<span>Q</span></a>
 
-  <div class="nav-links">
-    <a href="#vision">Our Vision</a>
-    <a href="#boss">THE BOSS</a>
-    <a href="#ecosystem">Ecosystem</a>
-    <a href="#contact">Contact</a>
+      <div class="nav-links">
+        <a href="#vision">Our Promise</a>
+        <a href="#boss">THE BOSS</a>
+        <a href="#ecosystem">NXQ Ecosystem</a>
+        <a href="#human">Our Approach</a>
+        <a href="#contact" class="nav-cta">Make an Enquiry</a>
+      </div>
+    </nav>
   </div>
-</nav>
 </header>
 
 <main>
 
+<!-- HERO -->
+
 <section class="hero" id="vision">
-<div class="container">
+  <div class="container hero-content">
 
-<div class="eyebrow">Executive Performance Intelligence</div>
+    <div class="eyebrow">Introducing NXQ</div>
 
-<h1>
-Connect the dots.<br>
-See the whole business.<br>
-<span>Improve performance.</span>
-</h1>
+    <h1>
+      You stay in control.
+      <span>We help you control better.</span>
+    </h1>
 
-<p>
-NEXQ brings executive intelligence, operational insight
-and business execution together to help organisations
-perform at their full potential.
-</p>
+    <p class="hero-copy">
+      Greater clarity. Better-informed decisions.
+      Stronger business performance.
+      NXQ helps business owners and executives
+      take a more informed, confident approach
+      to leading their organisations.
+    </p>
 
-<div class="actions">
-<a href="#boss" class="btn primary">Discover THE BOSS</a>
-<a href="#ecosystem" class="btn secondary">Explore NEXQ</a>
-</div>
+    <div class="hero-statement">
+      Your business. Your decisions. Your control.
+    </div>
 
-</div>
+    <div class="actions">
+      <a href="#boss" class="btn primary">Discover THE BOSS</a>
+      <a href="#ecosystem" class="btn secondary">Explore NXQ</a>
+    </div>
+
+  </div>
 </section>
+
+<!-- BRAND PROMISE -->
+
+<section class="promise">
+  <div class="container promise-inner">
+
+    <div class="eyebrow">The NXQ promise</div>
+
+    <h2>
+      You stay in control.
+      <span>We help you control better.</span>
+    </h2>
+
+    <p>
+      NXQ does not take control of your business.
+      It helps you control it better.
+      The decisions remain yours. Our purpose is
+      to strengthen the understanding and insight
+      behind them.
+    </p>
+
+  </div>
+</section>
+
+<!-- THE BOSS -->
 
 <section class="boss" id="boss">
-<div class="container boss-layout">
+  <div class="container boss-layout">
 
-<div>
-<div class="eyebrow">The flagship executive experience</div>
+    <div>
+      <div class="eyebrow">The flagship executive experience</div>
 
-<div class="boss-name">THE <span>BOSS</span></div>
+      <div class="boss-name">THE <span>BOSS</span></div>
 
-<h2 class="section-heading">
-Your executive advantage.
-</h2>
+      <h2 class="section-heading">
+        Executive intelligence.
+        A stronger perspective.
+      </h2>
 
-<p class="boss-description">
-An intelligent executive performance partner designed
-to give business leaders greater visibility, control
-and understanding of their organisations.
+      <p class="boss-description">
+        THE BOSS is designed to help business owners
+        and executives understand their organisations,
+        examine challenges, recognise opportunities
+        and make better-informed decisions.
 
-THE BOSS connects the information that matters,
-identifies opportunities, highlights inefficiencies
-and supports better executive decisions.
+        It brings an intelligent executive perspective
+        to the questions that matter, while keeping
+        the business owner firmly in control.
+      </p>
 
-Not another dashboard. Not another disconnected system.
-A smarter way to lead.
-</p>
+      <a href="#contact" class="btn primary">
+        Discover THE BOSS
+      </a>
 
-<a href="#contact" class="btn primary">
-Discover THE BOSS
-</a>
-</div>
+      <div class="boss-points">
+        <div class="boss-point">Business understanding</div>
+        <div class="boss-point">Performance insight</div>
+        <div class="boss-point">Opportunity identification</div>
+        <div class="boss-point">Executive decision support</div>
+      </div>
+    </div>
 
-<div class="boss-panel">
-<h3>EXECUTIVE PERFORMANCE</h3>
-<ul>
-<li>Business performance intelligence</li>
-<li>Production and operational efficiency</li>
-<li>Attendance and workforce insight</li>
-<li>Cost and resource optimisation</li>
-<li>Accountability and execution</li>
-<li>Executive decision support</li>
-<li>Human executive partnership</li>
-</ul>
-</div>
+    <div class="boss-visual" aria-label="The B symbol representing THE BOSS">
+      <div class="boss-mark">B<span>.</span></div>
+      <div class="boss-mark-caption">THE BOSS</div>
+    </div>
 
-</div>
+  </div>
 </section>
 
-<section id="ecosystem">
-<div class="container">
+<!-- NXQ ECOSYSTEM -->
 
-<div class="eyebrow">The NEXQ ecosystem</div>
+<section class="ecosystem" id="ecosystem">
+  <div class="container">
 
-<h2 class="section-heading">
-One connected vision.<br>
-Multiple performance opportunities.
-</h2>
+    <div class="eyebrow">The NXQ ecosystem</div>
 
-<p class="section-intro">
-NEXQ is designed as an evolving business intelligence
-ecosystem. Each component contributes to a more
-connected, accountable and productive organisation.
-</p>
+    <h2 class="section-heading">
+      One connected vision.<br>
+      A better way to lead.
+    </h2>
 
-<div class="grid">
+    <p class="section-intro">
+      NXQ brings together a growing portfolio of
+      business-focused products and experiences,
+      united by one principle: helping owners and
+      executives maintain better control of their businesses.
+    </p>
 
-<div class="card">
-<div class="card-label">01 / EXECUTIVE</div>
-<h3>THE BOSS</h3>
-<p>
-The executive intelligence partner.
-Bringing leadership insight, business
-performance and execution together.
-</p>
-</div>
+    <div class="product-grid">
 
-<div class="card">
-<div class="card-label">02 / PERFORMANCE</div>
-<h3>TRACKA</h3>
-<p>
-A performance and accountability
-component supporting visibility,
-measurement and operational progress.
-</p>
-</div>
+      <div class="product-card">
+        <div class="product-number">01 / EXECUTIVE INTELLIGENCE</div>
+        <h3>THE BOSS</h3>
+        <p>
+          The flagship executive intelligence experience.
+          A stronger perspective for understanding your
+          business and making informed decisions.
+        </p>
+      </div>
 
-<div class="card">
-<div class="card-label">03 / OUTPUT</div>
-<h3>OUTPUTA</h3>
-<p>
-A productivity-focused component
-supporting output measurement,
-efficiency and performance improvement.
-</p>
-</div>
+      <div class="product-card">
+        <div class="product-number">02 / BUSINESS OWNER EXPERIENCE</div>
+        <h3>NXQHUB</h3>
+        <p>
+          The business-owner command centre.
+          A central experience for engaging with
+          THE BOSS and the NXQ ecosystem.
+        </p>
+      </div>
 
-</div>
-</div>
+      <div class="product-card">
+        <div class="product-number">03 / NXQ PRODUCT ECOSYSTEM</div>
+        <h3>PANDA</h3>
+        <p>
+          A distinct product within the NXQ ecosystem.
+          Discover the wider NXQ offering through
+          a conversation with our team.
+        </p>
+      </div>
+
+    </div>
+  </div>
 </section>
+
+<!-- PRINCIPLES -->
 
 <section class="principles">
-<div class="container">
+  <div class="container">
 
-<div class="eyebrow">Our philosophy</div>
+    <div class="eyebrow">The NXQ difference</div>
 
-<h2 class="section-heading">
-Technology is the enabler.<br>
-Performance is the outcome.
-</h2>
+    <h2 class="section-heading">
+      Technology is the enabler.<br>
+      Better business control is the goal.
+    </h2>
 
-<p class="section-intro">
-We believe business improvement requires more than
-technology. It requires experience, accountability,
-understanding and practical execution.
-</p>
+    <p class="section-intro">
+      Meaningful business improvement takes more
+      than information. It requires understanding,
+      sound judgement and the ability to turn insight
+      into better decisions.
+    </p>
 
-<div class="principle-grid">
+    <div class="principle-grid">
 
-<div class="principle">
-<h3>Intelligence</h3>
-<p>Turn business information into meaningful insight.</p>
-</div>
+      <div class="principle">
+        <h3>Intelligence</h3>
+        <p>
+          Gain a more informed perspective
+          on the business decisions that matter.
+        </p>
+      </div>
 
-<div class="principle">
-<h3>Visibility</h3>
-<p>Understand what is happening across the organisation.</p>
-</div>
+      <div class="principle">
+        <h3>Visibility</h3>
+        <p>
+          Develop a clearer understanding
+          of your business and its performance.
+        </p>
+      </div>
 
-<div class="principle">
-<h3>Accountability</h3>
-<p>Connect decisions with ownership and action.</p>
-</div>
+      <div class="principle">
+        <h3>Accountability</h3>
+        <p>
+          Keep ownership, responsibility
+          and decisions where they belong.
+        </p>
+      </div>
 
-<div class="principle">
-<h3>Results</h3>
-<p>Focus on measurable operational improvement.</p>
-</div>
+      <div class="principle">
+        <h3>Results</h3>
+        <p>
+          Focus on practical priorities
+          and meaningful business improvement.
+        </p>
+      </div>
 
-</div>
-</div>
+    </div>
+  </div>
 </section>
 
-<section>
-<div class="container">
+<!-- HUMAN EXPERIENCE -->
 
-<div class="eyebrow">The human advantage</div>
+<section class="human" id="human">
+  <div class="container human-layout">
 
-<h2 class="section-heading">
-AI intelligence.<br>
-Real executive experience.
-</h2>
+    <div>
+      <div class="human-side">The human advantage</div>
+    </div>
 
-<p class="section-intro">
-NEXQ combines intelligent technology with practical
-executive experience. Where required, THE BOSS can
-be complemented by direct human executive involvement,
-support and on-site engagement.
+    <div>
+      <div class="eyebrow">Technology meets experience</div>
 
-Because understanding a business is about more than
-reading its numbers. It is about knowing what to do
-with them.
-</p>
+      <h2 class="section-heading">
+        Intelligent technology.
+        Real executive experience.
+      </h2>
 
-</div>
+      <div class="human-copy">
+        <p>
+          Business is about more than numbers,
+          systems and reports. It requires experience,
+          perspective and an understanding of what
+          those numbers mean in the real world.
+        </p>
+
+        <p>
+          NXQ recognises the value of practical
+          executive experience alongside intelligent
+          technology. Where appropriate, this can be
+          complemented by direct human executive
+          involvement and support.
+        </p>
+
+        <p>
+          Because better business control starts
+          with understanding.
+        </p>
+      </div>
+    </div>
+
+  </div>
 </section>
+
+<!-- CONTACT -->
 
 <section class="contact" id="contact">
-<div class="container">
+  <div class="container">
 
-<div class="eyebrow">The next level starts here</div>
+    <div class="eyebrow">Start a conversation</div>
 
-<h2 class="section-heading">
-Your business deserves an executive advantage.
-</h2>
+    <h2 class="section-heading">
+      Your business.
+      Your decisions.
+      A stronger future.
+    </h2>
 
-<p>
-Discover what NEXQ and THE BOSS can bring
-to your organisation.
-</p>
+    <p>
+      Discover how NXQ can help you gain greater
+      understanding, make better-informed decisions
+      and strengthen control of your business.
+    </p>
 
-<a href="mailto:" class="btn primary"
-onclick="event.preventDefault(); alert('Contact details will be added here for demonstration requests.');">
-Request a demonstration
-</a>
+    <div class="actions">
+      <a href="#boss" class="btn secondary">
+        Explore THE BOSS
+      </a>
 
-</div>
+      <a href="mailto:" class="btn primary"
+         onclick="event.preventDefault(); alert('Thank you for your interest in NXQ. Our demonstration contact details will be added here.');">
+        Request a demonstration
+      </a>
+    </div>
+
+  </div>
 </section>
 
 </main>
 
 <footer>
-<div class="container footer-content">
-<div><strong>NEXQ</strong> | Executive Performance Intelligence</div>
-<div>© 2026 NEXQ. All rights reserved.</div>
-</div>
+  <div class="container footer-content">
+
+    <div>
+      <div class="footer-brand">NX<span>Q</span></div>
+      <div>Executive Intelligence & Business Performance</div>
+    </div>
+
+    <div>
+      © 2026 NXQ. All rights reserved.
+    </div>
+
+  </div>
 </footer>
 
 </body>
 </html>
-
