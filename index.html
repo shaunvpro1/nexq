@@ -3,982 +3,659 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080b14">
-
-<title>NXQ | You Stay in Control</title>
-
-<meta name="description" content="NXQ helps business owners and executives gain greater control, clarity and confidence. Discover THE BOSS and the NXQ ecosystem.">
-
-<style>
-:root {
-  --bg: #080b14;
-  --surface: #101725;
-  --surface-light: #151f30;
-  --blue: #398fff;
-  --blue-light: #83b8ff;
-  --white: #f6f8fc;
-  --muted: #a4afc1;
-  --border: rgba(255,255,255,.11);
-  --max: 1180px;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 90px;
-}
-
-body {
-  background: var(--bg);
-  color: var(--white);
-  font-family: Inter, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Arial, sans-serif;
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.container {
-  width: min(var(--max), 90%);
-  margin: auto;
-}
-
-.eyebrow {
-  color: var(--blue-light);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 3.5px;
-  text-transform: uppercase;
-  margin-bottom: 24px;
-}
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(8,11,20,.94);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--border);
-}
-
-nav {
-  min-height: 82px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-}
-
-.logo {
-  font-size: 29px;
-  font-weight: 850;
-  letter-spacing: 5px;
-}
-
-.logo span {
-  color: var(--blue);
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--muted);
-}
-
-.nav-links a {
-  transition: color .2s ease;
-}
-
-.nav-links a:hover {
-  color: var(--white);
-}
-
-.nav-cta {
-  color: var(--white) !important;
-  border: 1px solid rgba(57,143,255,.55);
-  padding: 10px 17px;
-  border-radius: 3px;
-}
-
-.nav-cta:hover {
-  background: rgba(57,143,255,.12);
-}
-
-/* HERO */
-
-.hero {
-  min-height: 690px;
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  background:
-    radial-gradient(ellipse at 80% 35%,
-    rgba(35,110,220,.19), transparent 48%),
-    linear-gradient(180deg, #080b14, #0b1220);
-}
-
-.hero-content {
-  padding: 115px 0 120px;
-  max-width: 1000px;
-  position: relative;
-  z-index: 1;
-}
-
-.hero h1 {
-  font-size: clamp(44px, 7vw, 86px);
-  line-height: 1.06;
-  letter-spacing: -4px;
-  font-weight: 750;
-  max-width: 1050px;
-}
-
-.hero h1 span {
-  display: block;
-  color: var(--blue-light);
-}
-
-.hero-copy {
-  max-width: 670px;
-  color: var(--muted);
-  font-size: 18px;
-  margin-top: 30px;
-}
-
-.hero-statement {
-  margin-top: 38px;
-  padding-left: 18px;
-  border-left: 2px solid var(--blue);
-  color: #dce8fa;
-  font-size: 14px;
-  max-width: 600px;
-}
-
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 38px;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 24px;
-  min-height: 49px;
-  border-radius: 3px;
-  font-size: 12px;
-  font-weight: 750;
-  letter-spacing: .5px;
-  transition: .25s ease;
-}
-
-.primary {
-  background: var(--blue);
-  color: white;
-}
-
-.primary:hover {
-  background: #1879ed;
-  transform: translateY(-2px);
-}
-
-.secondary {
-  border: 1px solid rgba(255,255,255,.22);
-  color: var(--white);
-}
-
-.secondary:hover {
-  border-color: var(--blue);
-  background: rgba(57,143,255,.08);
-}
-
-/* SHARED SECTIONS */
-
-section {
-  padding: 112px 0;
-}
-
-.section-heading {
-  font-size: clamp(33px, 5vw, 53px);
-  line-height: 1.16;
-  letter-spacing: -1.8px;
-  font-weight: 700;
-  margin-bottom: 24px;
-}
-
-.section-intro {
-  max-width: 700px;
-  color: var(--muted);
-  font-size: 16px;
-}
-
-.promise {
-  background: #101827;
-  text-align: center;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.promise-inner {
-  max-width: 920px;
-  margin: auto;
-}
-
-.promise h2 {
-  font-size: clamp(35px, 6vw, 65px);
-  line-height: 1.13;
-  letter-spacing: -2px;
-}
-
-.promise h2 span {
-  display: block;
-  color: var(--blue-light);
-}
-
-.promise p {
-  max-width: 660px;
-  margin: 28px auto 0;
-  color: var(--muted);
-}
-
-/* THE BOSS */
-
-.boss {
-  background:
-    radial-gradient(ellipse at 78% 45%,
-    rgba(35,110,220,.13), transparent 42%),
-    #0a101c;
-  border-bottom: 1px solid var(--border);
-}
-
-.boss-layout {
-  display: grid;
-  grid-template-columns: 1.05fr .95fr;
-  gap: 75px;
-  align-items: center;
-}
-
-.boss-name {
-  font-size: clamp(48px, 6vw, 70px);
-  font-weight: 800;
-  letter-spacing: -3px;
-  line-height: 1;
-  margin-bottom: 26px;
-}
-
-.boss-name span {
-  color: var(--blue-light);
-}
-
-.boss-description {
-  color: var(--muted);
-  max-width: 590px;
-  margin: 24px 0 30px;
-  font-size: 16px;
-}
-
-.boss-visual {
-  min-height: 440px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(57,143,255,.24);
-  border-radius: 5px;
-  background:
-    radial-gradient(circle at center,
-    rgba(57,143,255,.16), transparent 62%),
-    linear-gradient(145deg, #111c2d, #080e19);
-}
-
-.boss-visual::before {
-  content: "";
-  position: absolute;
-  width: 310px;
-  height: 310px;
-  border: 1px solid rgba(131,184,255,.15);
-  border-radius: 50%;
-}
-
-.boss-visual::after {
-  content: "";
-  position: absolute;
-  width: 380px;
-  height: 380px;
-  border: 1px solid rgba(131,184,255,.08);
-  border-radius: 50%;
-}
-
-.boss-mark {
-  position: relative;
-  z-index: 2;
-  font-size: clamp(190px, 27vw, 310px);
-  line-height: 1;
-  font-weight: 850;
-  letter-spacing: -22px;
-  padding-right: 22px;
-  color: #f4f8ff;
-  text-shadow:
-    0 0 45px rgba(57,143,255,.25),
-    0 15px 45px rgba(0,0,0,.5);
-}
-
-.boss-mark span {
-  color: var(--blue);
-}
-
-.boss-mark-caption {
-  position: absolute;
-  bottom: 28px;
-  z-index: 3;
-  font-size: 11px;
-  letter-spacing: 5px;
-  font-weight: 700;
-  color: var(--blue-light);
-}
-
-.boss-points {
-  margin-top: 34px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 19px 25px;
-}
-
-.boss-point {
-  border-top: 1px solid var(--border);
-  padding-top: 14px;
-  color: #dce5f3;
-  font-size: 13px;
-}
-
-.boss-point::before {
-  content: "—";
-  color: var(--blue);
-  margin-right: 9px;
-}
-
-/* ECOSYSTEM */
-
-.ecosystem {
-  background: #0b111d;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
-  margin-top: 52px;
-}
-
-.product-card {
-  padding: 38px;
-  min-height: 260px;
-  background: linear-gradient(145deg, #121e30, #0d1522);
-  border: 1px solid var(--border);
-  transition: border-color .25s, transform .25s;
-}
-
-.product-card:hover {
-  border-color: rgba(57,143,255,.55);
-  transform: translateY(-4px);
-}
-
-.product-number {
-  color: var(--blue-light);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  margin-bottom: 25px;
-}
-
-.product-card h3 {
-  font-size: 27px;
-  letter-spacing: -.5px;
-  margin-bottom: 14px;
-}
-
-.product-card p {
-  color: var(--muted);
-  font-size: 14px;
-  max-width: 440px;
-}
-
-/* PRINCIPLES */
-
-.principles {
-  background: #101827;
-}
-
-.principle-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  margin-top: 52px;
-}
-
-.principle {
-  padding-top: 21px;
-  border-top: 1px solid rgba(131,184,255,.38);
-}
-
-.principle h3 {
-  font-size: 17px;
-  margin-bottom: 12px;
-}
-
-.principle p {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-/* HUMAN EXPERIENCE */
-
-.human {
-  background: #090f1a;
-}
-
-.human-layout {
-  display: grid;
-  grid-template-columns: .8fr 1.2fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.human-side {
-  color: var(--blue-light);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
-.human-copy {
-  color: var(--muted);
-  font-size: 16px;
-  max-width: 700px;
-}
-
-.human-copy p + p {
-  margin-top: 20px;
-}
-
-/* CONTACT */
-
-.contact {
-  text-align: center;
-  background:
-    radial-gradient(ellipse at center,
-    rgba(35,110,220,.18), transparent 65%),
-    #0c1422;
-  border-top: 1px solid var(--border);
-}
-
-.contact .section-heading {
-  max-width: 850px;
-  margin: 0 auto 24px;
-}
-
-.contact p {
-  max-width: 620px;
-  color: var(--muted);
-  margin: 0 auto;
-}
-
-.contact .actions {
-  justify-content: center;
-}
-
-/* FOOTER */
-
-footer {
-  padding: 32px 0;
-  border-top: 1px solid var(--border);
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.footer-brand {
-  color: var(--white);
-  font-size: 16px;
-  font-weight: 800;
-  letter-spacing: 3px;
-}
-
-.footer-brand span {
-  color: var(--blue);
-}
-
-/* ACCESSIBILITY AND RESPONSIVE */
-
-a:focus-visible {
-  outline: 2px solid var(--blue-light);
-  outline-offset: 4px;
-}
-
-@media(max-width: 850px) {
-  .boss-layout,
-  .human-layout {
-    grid-template-columns: 1fr;
-    gap: 45px;
-  }
-
-  .boss-visual {
-    min-height: 360px;
-  }
-
-  .principle-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .nav-links {
-    gap: 18px;
-  }
-}
-
-@media(max-width: 600px) {
-  nav {
-    padding: 17px 0;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .nav-links {
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 12px 19px;
-    font-size: 11px;
-  }
-
-  .nav-cta {
-    padding: 7px 10px;
-  }
-
-  .hero {
-    min-height: auto;
-  }
-
-  .hero-content {
-    padding: 90px 0;
-  }
-
-  .hero h1 {
-    letter-spacing: -2px;
-  }
-
-  .hero-copy {
-    font-size: 16px;
-  }
-
-  section {
-    padding: 78px 0;
-  }
-
-  .promise h2 {
-    letter-spacing: -1px;
-  }
-
-  .product-grid,
-  .principle-grid,
-  .boss-points {
-    grid-template-columns: 1fr;
-  }
-
-  .product-card {
-    padding: 28px;
-    min-height: 220px;
-  }
-
-  .boss-visual {
-    min-height: 290px;
-  }
-
-  .boss-visual::before {
-    width: 220px;
-    height: 220px;
-  }
-
-  .boss-visual::after {
-    width: 280px;
-    height: 280px;
-  }
-
-  .boss-mark {
-    font-size: 205px;
-    letter-spacing: -15px;
-    padding-right: 15px;
-  }
-
-  .footer-content {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-}
-
-@media(prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    transition-duration: .01ms !important;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070a12">
+  <meta name="description" content="NXQ helps business owners gain greater control, clarity and confidence in running their businesses.">
+  <title>NXQ — You Stay in Control</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #070a12;
+      --surface: #0d1320;
+      --surface-2: #111b2c;
+      --white: #f5f7fb;
+      --muted: #98a5b8;
+      --blue: #4b9cff;
+      --blue-bright: #79b7ff;
+      --line: rgba(255,255,255,.10);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    button { font: inherit; }
+
+    .container {
+      width: min(var(--max), calc(100% - 64px));
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: var(--blue-bright);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+    }
+
+    .section {
+      padding: 125px 0;
+      position: relative;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 58px;
+    }
+
+    .section-heading h2 {
+      font-family: Manrope, sans-serif;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.12;
+      letter-spacing: -.045em;
+      margin: 17px 0;
+      font-weight: 600;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 600px;
+    }
+
+    /* Navigation */
+
+    header {
+      position: absolute;
+      z-index: 20;
+      top: 0;
+      left: 0;
+      width: 100%;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+
+    nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-family: Manrope, sans-serif;
+      font-size: 27px;
+      font-weight: 800;
+      letter-spacing: -.09em;
+    }
+
+    .brand span { color: var(--blue); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      color: #c0cad8;
+      font-size: 13px;
+    }
+
+    .nav-links a:hover { color: white; }
+
+    .nav-cta {
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 3px;
+      padding: 10px 17px;
+      transition: .25s;
+    }
+
+    .nav-cta:hover {
+      background: white;
+      color: #070a12;
+    }
+
+    /* Hero */
+
+    .hero {
+      min-height: 850px;
+      padding: 180px 0 110px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 72% 38%, rgba(32,105,200,.20), transparent 38%),
+        radial-gradient(ellipse at 15% 85%, rgba(28,62,115,.13), transparent 35%),
+        linear-gradient(115deg, #070a12 15%, #0a1120 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 720px;
+      height: 720px;
+      border: 1px solid rgba(94,161,255,.09);
+      border-radius: 50%;
+      right: -120px;
+      top: 80px;
+      box-shadow:
+        0 0 0 70px rgba(94,161,255,.018),
+        0 0 0 140px rgba(94,161,255,.014),
+        0 0 100px rgba(42,126,232,.12);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .15;
+      background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to right, transparent, black);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 790px;
+    }
+
+    .hero h1 {
+      font-family: Manrope, sans-serif;
+      font-size: clamp(52px, 8vw, 94px);
+      line-height: .99;
+      letter-spacing: -.075em;
+      font-weight: 600;
+      margin: 28px 0;
+    }
+
+    .hero h1 span {
+      color: var(--blue-bright);
+      display: block;
+    }
+
+    .hero-copy {
+      max-width: 540px;
+      font-size: 18px;
+      color: #aab7ca;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 23px;
+      min-height: 52px;
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: 3px;
+      transition: .25s ease;
+    }
+
+    .button-primary {
+      background: #f5f7fb;
+      color: #080d17;
+    }
+
+    .button-primary:hover {
+      background: var(--blue-bright);
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      border: 1px solid rgba(255,255,255,.22);
+      color: white;
+    }
+
+    .button-outline:hover {
+      border-color: var(--blue);
+      background: rgba(75,156,255,.08);
+    }
+
+    .hero-note {
+      margin-top: 75px;
+      color: #738198;
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    /* Promise */
+
+    .promise {
+      padding: 110px 0;
+      background: linear-gradient(180deg, #0b1220, #0a0e18);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .promise-inner { max-width: 950px; margin: auto; }
+
+    .promise h2 {
+      font-family: Manrope, sans-serif;
+      font-size: clamp(32px, 5.5vw, 67px);
+      line-height: 1.17;
+      letter-spacing: -.055em;
+      font-weight: 600;
+      margin: 25px 0;
+    }
+
+    .promise h2 span { color: var(--blue-bright); }
+
+    .promise p {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 620px;
+      margin: 25px auto 0;
+    }
+
+    /* Boss */
+
+    .boss-section {
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 78% 50%, rgba(38,111,205,.15), transparent 40%),
+        #080d17;
+    }
+
+    .boss-layout {
+      display: grid;
+      grid-template-columns: 1fr .9fr;
+      align-items: center;
+      gap: 80px;
+    }
+
+    .boss-copy h2 {
+      font-family: Manrope, sans-serif;
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: 1.02;
+      letter-spacing: -.065em;
+      margin: 20px 0 25px;
+    }
+
+    .boss-copy h2 span { color: var(--blue-bright); }
+
+    .boss-copy > p {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 510px;
+      margin-bottom: 28px;
+    }
+
+    .boss-points {
+      display: grid;
+      gap: 17px;
+      margin: 35px 0;
+    }
+
+    .boss-point {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      color: #d6deea;
+      font-size: 14px;
+    }
+
+    .point-mark {
+      width: 7px;
+      height: 7px;
+      background: var(--blue);
+      border-radius: 50%;
+      margin-top: 8px;
+      box-shadow: 0 0 13px rgba(75,156,255,.8);
+      flex-shrink: 0;
+    }
+
+    .boss-art {
+      min-height: 480px;
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .boss-orbit {
+      position: absolute;
+      width: 390px;
+      height: 390px;
+      border: 1px solid rgba(94,161,255,.20);
+      border-radius: 50%;
+      box-shadow: 0 0 90px rgba(40,120,225,.12), inset 0 0 70px rgba(40,120,225,.06);
+    }
+
+    .boss-orbit::before,
+    .boss-orbit::after {
+      content: "";
+      position: absolute;
+      inset: 28px;
+      border: 1px solid rgba(94,161,255,.13);
+      border-radius: 50%;
+    }
+
+    .boss-orbit::after { inset: 65px; }
+
+    .boss-symbol {
+      position: relative;
+      z-index: 2;
+      font-family: Manrope, sans-serif;
+      font-size: 260px;
+      font-weight: 800;
+      letter-spacing: -.13em;
+      line-height: 1;
+      color: #eaf3ff;
+      text-shadow: 0 0 70px rgba(76,153,255,.35);
+      padding-right: 30px;
+    }
+
+    .boss-symbol span { color: var(--blue); }
+
+    .boss-caption {
+      position: absolute;
+      bottom: 20px;
+      color: #8da2bd;
+      font-size: 11px;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+    }
+
+    /* Ecosystem */
+
+    .ecosystem {
+      background: #0b101b;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .product-card {
+      min-height: 340px;
+      padding: 38px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg, rgba(23,39,62,.88), rgba(11,17,29,.96));
+      border: 1px solid rgba(255,255,255,.10);
+      transition: .3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(75,156,255,.45);
+      box-shadow: 0 20px 60px rgba(0,0,0,.22);
+    }
+
+    .product-card::after {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      right: -90px;
+      bottom: -130px;
+      border: 1px solid rgba(75,156,255,.22);
+      border-radius: 50%;
+      box-shadow: 0 0 0 35px rgba(75,156,255,.025), 0 0 0 70px rgba(75,156,255,.02);
+    }
+
+    .product-label {
+      color: var(--blue-bright);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .product-card h3 {
+      font-family: Manrope, sans-serif;
+      font-size: 37px;
+      letter-spacing: -.055em;
+      margin: 24px 0 12px;
+    }
+
+    .product-card p {
+      color: var(--muted);
+      max-width: 420px;
+      font-size: 14px;
+    }
+
+    .product-arrow {
+      display: inline-block;
+      margin-top: 35px;
+      color: #dce9fb;
+      font-size: 13px;
+    }
+
+    /* Philosophy */
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .principle {
+      padding: 32px 24px;
+      border-right: 1px solid var(--line);
+    }
+
+    .principle:last-child { border-right: 0; }
+
+    .principle h3 {
+      font-family: Manrope, sans-serif;
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .principle p {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Human */
+
+    .human-section {
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(28,82,150,.12), transparent 42%),
+        #080c15;
+    }
+
+    .human-panel {
+      padding: 65px;
+      border: 1px solid rgba(255,255,255,.11);
+      background: linear-gradient(120deg, rgba(20,34,54,.8), rgba(9,15,26,.8));
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .human-panel h2 {
+      font-family: Manrope, sans-serif;
+      font-size: clamp(32px, 4vw, 49px);
+      line-height: 1.12;
+      letter-spacing: -.05em;
+      margin: 18px 0;
+    }
+
+    .human-panel p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .human-statement {
+      font-family: Manrope, sans-serif;
+      font-size: 26px;
+      line-height: 1.45;
+      color: #dce9fb;
+      border-left: 2px solid var(--blue);
+      padding-left: 28px;
+    }
+
+    /* Closing */
+
+    .closing {
+      text-align: center;
+      padding: 120px 0 130px;
+      background:
+        radial-gradient(ellipse at 50% 100%, rgba(40,110,205,.18), transparent 50%),
+        #0a0e18;
+      border-top: 1px solid var(--line);
+    }
+
+    .closing h2 {
+      font-family: Manrope, sans-serif;
+      font-size: clamp(40px, 6vw, 72px);
+      line-height: 1.05;
+      letter-spacing: -.065em;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    .closing p {
+      color: var(--muted);
+      margin: 20px auto 32px;
+      max-width: 520px;
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 35px 0;
+      border-top: 1px solid var(--line);
+      background: #060910;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      color: #78869a;
+      font-size: 11px;
+    }
+
+    .footer-brand {
+      font-family: Manrope, sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -.08em;
+      color: white;
+    }
+
+    .footer-brand span { color: var(--blue); }
+
+    /* Reveal animation */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    /* Responsive */
+
+    @media (max-width: 850px) {
+      .container { width: min(100% - 42px, var(--max)); }
+      .hero { min-height: 760px; }
+      .boss-layout { grid-template-columns: 1fr; gap: 20px; }
+      .boss-art { min-height: 390px; }
+      .boss-orbit { width: 310px; height: 310px; }
+      .boss-symbol { font-size: 210px; }
+      .human-panel { padding: 40px; gap: 35px; }
+      .principles { grid-template-columns: 1fr 1fr; }
+      .principle:nth-child(2) { border-right: 0; }
+      .principle:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+    }
+
+    @media (max-width: 600px) {
+      .container { width: calc(100% - 38px); }
+      .section { padding: 85px 0; }
+      header { position: absolute; }
+      nav { height: 72px; }
+      .nav-links { gap: 15px; font-size: 11px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .brand { font-size: 25px; }
+      .hero { min-height: 760px; padding: 145px 0 80px; }
+      .hero h1 { font-size: clamp(49px, 14vw, 72px); }
+      .hero-copy { font-size: 16px; }
+      .hero::before { right: -400px; top: 150px; }
+      .hero-note { margin-top: 55px; }
+      .promise { padding: 80px 0; }
+      .boss-art { min-height: 320px; }
+      .boss-orbit { width: 260px; height: 260px; }
+      .boss-symbol { font-size: 175px; }
+      .product-grid { grid-template-columns: 1fr; }
+      .product-card { min-height: 290px; padding: 30px; }
+      .principle { padding: 25px 17px; }
+      .principle h3 { font-size: 15px; }
+      .human-panel { grid-template-columns: 1fr; padding: 30px 24px; }
+      .human-statement { font-size: 21px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <div class="container">
-    <nav aria-label="Main navigation">
-      <a href="#" class="logo" aria-label="NXQ home">NX<span>Q</span></a>
-
-      <div class="nav-links">
-        <a href="#vision">Our Promise</a>
-        <a href="#boss">THE BOSS</a>
-        <a href="#ecosystem">NXQ Ecosystem</a>
-        <a href="#human">Our Approach</a>
-        <a href="#contact" class="nav-cta">Make an Enquiry</a>
-      </div>
-    </nav>
-  </div>
-</header>
-
-<main>
-
-<!-- HERO -->
-
-<section class="hero" id="vision">
-  <div class="container hero-content">
-
-    <div class="eyebrow">Introducing NXQ</div>
-
-    <h1>
-      You stay in control.
-      <span>We help you control better.</span>
-    </h1>
-
-    <p class="hero-copy">
-      Greater clarity. Better-informed decisions.
-      Stronger business performance.
-      NXQ helps business owners and executives
-      take a more informed, confident approach
-      to leading their organisations.
-    </p>
-
-    <div class="hero-statement">
-      Your business. Your decisions. Your control.
+  <header>
+    <div class="container">
+      <nav aria-label="Main navigation">
+        <a class="brand" href="#home" aria-label="NXQ home">NXQ<span>.</span></a>
+        <div class="nav-links">
+          <a href="#boss">THE BOSS</a>
+          <a href="#ecosystem">OUR ECOSYSTEM</a>
+          <a href="#approach">OUR APPROACH</a>
+          <a class="nav-cta" href="#contact">Let's talk</a>
+        </div>
+      </nav>
     </div>
+  </header>
 
-    <div class="actions">
-      <a href="#boss" class="btn primary">Discover THE BOSS</a>
-      <a href="#ecosystem" class="btn secondary">Explore NXQ</a>
-    </div>
+  <main>
 
-  </div>
-</section>
-
-<!-- BRAND PROMISE -->
-
-<section class="promise">
-  <div class="container promise-inner">
-
-    <div class="eyebrow">The NXQ promise</div>
-
-    <h2>
-      You stay in control.
-      <span>We help you control better.</span>
-    </h2>
-
-    <p>
-      NXQ does not take control of your business.
-      It helps you control it better.
-      The decisions remain yours. Our purpose is
-      to strengthen the understanding and insight
-      behind them.
-    </p>
-
-  </div>
-</section>
-
-<!-- THE BOSS -->
-
-<section class="boss" id="boss">
-  <div class="container boss-layout">
-
-    <div>
-      <div class="eyebrow">The flagship executive experience</div>
-
-      <div class="boss-name">THE <span>BOSS</span></div>
-
-      <h2 class="section-heading">
-        Executive intelligence.
-        A stronger perspective.
-      </h2>
-
-      <p class="boss-description">
-        THE BOSS is designed to help business owners
-        and executives understand their organisations,
-        examine challenges, recognise opportunities
-        and make better-informed decisions.
-
-        It brings an intelligent executive perspective
-        to the questions that matter, while keeping
-        the business owner firmly in control.
-      </p>
-
-      <a href="#contact" class="btn primary">
-        Discover THE BOSS
-      </a>
-
-      <div class="boss-points">
-        <div class="boss-point">Business understanding</div>
-        <div class="boss-point">Performance insight</div>
-        <div class="boss-point">Opportunity identification</div>
-        <div class="boss-point">Executive decision support</div>
-      </div>
-    </div>
-
-    <div class="boss-visual" aria-label="The B symbol representing THE BOSS">
-      <div class="boss-mark">B<span>.</span></div>
-      <div class="boss-mark-caption">THE BOSS</div>
-    </div>
-
-  </div>
-</section>
-
-<!-- NXQ ECOSYSTEM -->
-
-<section class="ecosystem" id="ecosystem">
-  <div class="container">
-
-    <div class="eyebrow">The NXQ ecosystem</div>
-
-    <h2 class="section-heading">
-      One connected vision.<br>
-      A better way to lead.
-    </h2>
-
-    <p class="section-intro">
-      NXQ brings together a growing portfolio of
-      business-focused products and experiences,
-      united by one principle: helping owners and
-      executives maintain better control of their businesses.
-    </p>
-
-    <div class="product-grid">
-
-      <div class="product-card">
-        <div class="product-number">01 / EXECUTIVE INTELLIGENCE</div>
-        <h3>THE BOSS</h3>
-        <p>
-          The flagship executive intelligence experience.
-          A stronger perspective for understanding your
-          business and making informed decisions.
-        </p>
-      </div>
-
-      <div class="product-card">
-        <div class="product-number">02 / BUSINESS OWNER EXPERIENCE</div>
-        <h3>NXQHUB</h3>
-        <p>
-          The business-owner command centre.
-          A central experience for engaging with
-          THE BOSS and the NXQ ecosystem.
-        </p>
-      </div>
-
-      <div class="product-card">
-        <div class="product-number">03 / NXQ PRODUCT ECOSYSTEM</div>
-        <h3>PANDA</h3>
-        <p>
-          A distinct product within the NXQ ecosystem.
-          Discover the wider NXQ offering through
-          a conversation with our team.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- PRINCIPLES -->
-
-<section class="principles">
-  <div class="container">
-
-    <div class="eyebrow">The NXQ difference</div>
-
-    <h2 class="section-heading">
-      Technology is the enabler.<br>
-      Better business control is the goal.
-    </h2>
-
-    <p class="section-intro">
-      Meaningful business improvement takes more
-      than information. It requires understanding,
-      sound judgement and the ability to turn insight
-      into better decisions.
-    </p>
-
-    <div class="principle-grid">
-
-      <div class="principle">
-        <h3>Intelligence</h3>
-        <p>
-          Gain a more informed perspective
-          on the business decisions that matter.
-        </p>
-      </div>
-
-      <div class="principle">
-        <h3>Visibility</h3>
-        <p>
-          Develop a clearer understanding
-          of your business and its performance.
-        </p>
-      </div>
-
-      <div class="principle">
-        <h3>Accountability</h3>
-        <p>
-          Keep ownership, responsibility
-          and decisions where they belong.
-        </p>
-      </div>
-
-      <div class="principle">
-        <h3>Results</h3>
-        <p>
-          Focus on practical priorities
-          and meaningful business improvement.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- HUMAN EXPERIENCE -->
-
-<section class="human" id="human">
-  <div class="container human-layout">
-
-    <div>
-      <div class="human-side">The human advantage</div>
-    </div>
-
-    <div>
-      <div class="eyebrow">Technology meets experience</div>
-
-      <h2 class="section-heading">
-        Intelligent technology.
-        Real executive experience.
-      </h2>
-
-      <div class="human-copy">
-        <p>
-          Business is about more than numbers,
-          systems and reports. It requires experience,
-          perspective and an understanding of what
-          those numbers mean in the real world.
-        </p>
-
-        <p>
-          NXQ recognises the value of practical
-          executive experience alongside intelligent
-          technology. Where appropriate, this can be
-          complemented by direct human executive
-          involvement and support.
-        </p>
-
-        <p>
-          Because better business control starts
-          with understanding.
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- CONTACT -->
-
-<section class="contact" id="contact">
-  <div class="container">
-
-    <div class="eyebrow">Start a conversation</div>
-
-    <h2 class="section-heading">
-      Your business.
-      Your decisions.
-      A stronger future.
-    </h2>
-
-    <p>
-      Discover how NXQ can help you gain greater
-      understanding, make better-informed decisions
-      and strengthen control of your business.
-    </p>
-
-    <div class="actions">
-      <a href="#boss" class="btn secondary">
-        Explore THE BOSS
-      </a>
-
-      <a href="mailto:" class="btn primary"
-         onclick="event.preventDefault(); alert('Thank you for your interest in NXQ. Our demonstration contact details will be added here.');">
-        Request a demonstration
-      </a>
-    </div>
-
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="container footer-content">
-
-    <div>
-      <div class="footer-brand">NX<span>Q</span></div>
-      <div>Executive Intelligence & Business Performance</div>
-    </div>
-
-    <div>
-      © 2026 NXQ. All rights reserved.
-    </div>
-
-  </div>
-</footer>
-
-</body>
-</html>
+    <section class="hero" id="home">
