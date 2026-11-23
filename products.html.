@@ -436,7 +436,7 @@
     <a href="products.html">Products</a>
     <a href="solutions.html">Solutions</a>
     <a href="contact.html">Contact</a>
-  </div>
+  </div><!-- NXQ products page deployment refresh -->
 
   <small>© <span id="year"></span> NXQ. All rights reserved.</small>
 </footer>
